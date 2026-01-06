@@ -10,32 +10,32 @@ const Body=()=>{
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const userslice=useSelector((store)=>store.user)
-//     const fetchuser=async()=>{
-//         // console.log(userslice)
+    const fetchuser=async()=>{
+        // console.log(userslice)
 
-//         try {
+        try {
 
-//             if(userslice) return ;
+            if(userslice) return ;
 
-//             // console.log(hi)
+            // console.log(hi)
 
-//             const res= await   axios.get(BASE_URL + "/userinfo",{
-//                 withCredentials:true
-//              })
-//             //  console.log("hi",res)
-//             dispatch(addUser(res.data))
+            const res= await   axios.get(BASE_URL + "/userinfo",{
+                withCredentials:true
+             })
+            //  console.log("hi",res)
+            dispatch(addUser(res.data))
              
-//         } catch (error) {
+        } catch (error) {
 
-//             if(error.status=401)navigate("/login");
-//             // console.error(error)
-//         }
+            if(error.status=401)navigate("/login");
+            // console.error(error)
+        }
     
            
-// }
-//  useEffect(()=>{
-//                 fetchuser();
-//             },[])
+}
+ useEffect(()=>{
+                fetchuser();
+            },[])
     return(
         <div>
             <Nav />
